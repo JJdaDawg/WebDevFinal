@@ -1,0 +1,45 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id        String   @id @default(uuid())
+  username  String   @unique
+  email     String   @unique
+  actualName String?
+  reviews   Review[]
+  likes     Like[]
+}
+
+model Review {
+  id          String   @id @default(uuid())
+  albumId     String
+  albumName   String
+  artistName  String
+  rating      Int
+  description String
+  moods       String[]
+  emotions    String[]
+  authorId    String
+  author      User     @relation(fields: [authorId], references: [id])
+  likes       Like[]
+  createdAt   DateTime @default(now())
+}
+
+model Like {
+  id       String @id @default(uuid())
+  userId   String
+  reviewId String
+  user     User   @relation(fields: [userId], references: [id])
+  review   Review @relation(fields: [reviewId], references: [id])
+}
