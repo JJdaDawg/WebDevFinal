@@ -7,8 +7,8 @@ import SiteLogo from "../assets/Logo.svg";
 const Header = () => {
   return (
     <div className="min-h-full">
-      <nav className="bg-gray-800/50">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <nav className="bg-gray-800/50 w-full">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
             <div className="flex items-center">
               <div className="shrink-0">

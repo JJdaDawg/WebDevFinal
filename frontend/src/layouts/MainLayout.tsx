@@ -9,8 +9,8 @@ const Layout = () => {
         <header>
           <Header />
         </header>
-        <main>
-          <div className="flex-1">
+        <main className="flex-1 w-full">
+          <div>
             {/*  Your content*/}
             <Outlet />
           </div>

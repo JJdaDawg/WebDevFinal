@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <>
       <div id="footer">
-        <h2>Footer</h2>
+        <h2>Copyright © Music Critics April 2026 </h2>
       </div>
     </>
   );
