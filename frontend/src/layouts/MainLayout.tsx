@@ -11,11 +11,9 @@ const Layout = () => {
         </header>
         <main className="flex-1 w-full">
           <div>
-            {/*  Your content*/}
             <Outlet />
           </div>
         </main>
-
         <footer>
           <Footer />
         </footer>
